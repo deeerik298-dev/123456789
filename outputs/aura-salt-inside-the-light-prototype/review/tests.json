@@ -1,0 +1,108 @@
+[
+  {
+    "width": 390,
+    "initial": "20%",
+    "middle": "52.5%",
+    "end": "85%",
+    "static": true,
+    "reduced": true,
+    "errors": [],
+    "remote": [],
+    "layout": {
+      "overflow": false,
+      "title": {
+        "x": 27.296875,
+        "y": 193.796875,
+        "width": 339.3125,
+        "height": 117.15625,
+        "top": 193.796875,
+        "right": 366.609375,
+        "bottom": 310.953125,
+        "left": 27.296875
+      },
+      "button": {
+        "x": 19.5,
+        "y": 767,
+        "width": 180.71875,
+        "height": 44,
+        "top": 767,
+        "right": 200.21875,
+        "bottom": 811,
+        "left": 19.5
+      }
+    },
+    "pass": true
+  },
+  {
+    "width": 768,
+    "initial": "20%",
+    "middle": "52.5%",
+    "end": "85%",
+    "static": true,
+    "reduced": true,
+    "errors": [],
+    "remote": [],
+    "layout": {
+      "overflow": false,
+      "title": {
+        "x": 61.4375,
+        "y": 243,
+        "width": 288.546875,
+        "height": 105.46875,
+        "top": 243,
+        "right": 349.984375,
+        "bottom": 348.46875,
+        "left": 61.4375
+      },
+      "button": {
+        "x": 307.046875,
+        "y": 776,
+        "width": 180.71875,
+        "height": 44,
+        "top": 776,
+        "right": 487.765625,
+        "bottom": 820,
+        "left": 307.046875
+      }
+    },
+    "pass": true
+  },
+  {
+    "width": 1440,
+    "initial": "20%",
+    "middle": "52.5%",
+    "end": "82.66666666666666%",
+    "static": true,
+    "reduced": true,
+    "errors": [],
+    "remote": [],
+    "layout": {
+      "overflow": false,
+      "title": {
+        "x": 115.1875,
+        "y": 243,
+        "width": 513.609375,
+        "height": 197.78125,
+        "top": 243,
+        "right": 628.796875,
+        "bottom": 440.78125,
+        "left": 115.1875
+      },
+      "button": {
+        "x": 643.046875,
+        "y": 776,
+        "width": 180.71875,
+        "height": 44,
+        "top": 776,
+        "right": 823.765625,
+        "bottom": 820,
+        "left": 643.046875
+      }
+    },
+    "pass": true
+  },
+  {
+    "case": "no-js",
+    "pass": true
+  }
+]
