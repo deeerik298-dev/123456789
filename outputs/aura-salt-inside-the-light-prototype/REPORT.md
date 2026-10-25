@@ -1,35 +1,18 @@
-# Raport korekty Kalinki — 25.10.2026
+# Raport — korekta po otrzymaniu referencji
 
-Odczytano zatwierdzony komentarz Tanii 6399055826. Zmieniono istniejący prototyp, bez przebudowy projektu i bez zmian witryn. Kopia poprzedniej paczki: work/salt-light-before-correction.zip (poza dostarczaną paczką).
+Otrzymano i obejrzano oba oryginały Irka. Poprzednie tło panelu z kruchami odrzucono. Usunięto ruchome pasmo i kosztowne maski; zachowano markę, hasło i oddzielny folder prototypu. Treść przewija się normalnie przez trzy odcinki na jednym ciągłym tle z cegły.
 
-## Wykonano
-- Dłuższy scroll 450 svh, zakotwiczony viewport, stała geometria i kadrowanie tła.
-- Pionowy postęp światła góra→dół zamiast wcześniejszego ruchu po przekątnej.
-- Dwie dokładnie dopasowane warstwy tej samej autentycznej fotografii: przygaszona oraz jaśniejsza odsłaniana miękką maską. Jasność nadal wynika z fotografii; brak dodanych fikcyjnych żyłek. To efekt graficzny, nie symulacja przezierności.
-- Usunięto kosztowną dodatkową maskę luminancji po pomiarach. Nadal wymagana optymalizacja wydajności.
-- Ukryto zachętę do animacji bez JS; statyczny fallback i preferencja ograniczonego ruchu.
+## Testy Kalinki
+Chromium headless, file://, 390/768/1440 ×900 px, pozycje 0/25/50/75/100%. Łącznie 15 zrzutów i 4 funkcjonalne PASS (w tym bez JS). Sprawdzono normalny ruch treści, pełnoekranowe tło, brak poziomego scrolla i masek, postęp globalnego światła 0,10→0,20, Enter na przycisku, reduced-motion, brak błędów JS. Obejrzano desktop początek oraz mobilny i desktop koniec/środek. Nie jest to niezależna kontrola Tanii.
 
-## Wyniki rzeczywistych testów
-Chromium headless, lokalny file://; ekrany emulowane, nie fizyczne urządzenia. Zrzuty 0/25/50/75/100% dla każdej szerokości. 4 funkcjonalne PASS: 390,768,1440 oraz bez JS. PASS nie oznacza spełnienia wymagań płynności ani finalnej fotografii.
-Sprawdzono: postęp z tolerancją 0,002, pozycja sticky 0 px, stała transformacja materiału, brak poziomego przepełnienia, skip-link klawiaturą, Enter dla trybu statycznego i powrotu, reduced-motion po zmianie i resize, brak błędów JS/konsoli i żądań HTTP(S). Zmiana preferencji systemowej jest obsługiwana także przy kolejnym scroll/resize, jako zabezpieczenie przed niedostarczonym zdarzeniem change.
+Pomiar pomocniczy podczas przewijania: 59 odstępów rAF na ekran.
+- 390 px: mediana 16.6 ms, maksimum 18.4 ms.
+- 768 px: mediana 16.6 ms, maksimum 27.0 ms.
+- 1440 px: mediana 25.0 ms, maksimum 34.7 ms.
 
-## Pomiar płynności — ograniczenie pozostaje
-W każdym ekranie 59 odstępów requestAnimationFrame podczas programowego przewijania. To pomocniczy pomiar środowiska headless, nie benchmark fizycznego telefonu ani gwarancja FPS.
-- 390 px: mediana 23.8 ms; maksimum 58.5 ms.
-- 768 px: mediana 75.3 ms; maksimum 154.8 ms.
-- 1440 px: mediana 132.4 ms; maksimum 241.6 ms.
-Wyniki wskazują opóźnienia, szczególnie na desktopie tego środowiska. Nie zatwierdzam płynności; potrzebna dalsza optymalizacja po doborze właściwego zdjęcia. Brak testów Safari/iOS, fizycznego Androida, sieci mobilnej, pełnego WCAG.
+Lepszy wynik niż w poprzedniej próbie, ale nie gwarancja 60 FPS na urządzeniach fizycznych. Nie testowano fizycznego telefonu ani Safari/iOS. Nie wykonano pełnego audytu WCAG/kontrastu.
 
-## Ocena wizualna
-Obejrzano zrzuty desktop 0/50/100% i mobilny 50%: bez białych marginesów, stabilny materiał i widoczne zmiany oświetlenia, czytelna treść. Zapisano wszystkie 15 punktów; nie deklaruję niezależnej kontroli Tanii ani pełnego pomiaru kontrastu. Wyostrzenia lub nowych detali nie dodawano.
+## Ograniczenia
+Kadr pochodzi z rzeczywistego zdjęcia produktu; brak wygenerowanych detali. Efektywny wycinek 760×450 jest skalowany na ekran, więc nie jest ostrym makro 4K. Nie przedstawiam zdjęcia jako obrazu wnętrza kryształu. Subtelność i odczucie naturalnego światła wymagają oceny Irka w ruchu. Tekst demonstracyjny nie rozszerza zatwierdzonej oferty.
 
-## Źródło i licencja
-Niezmienione zdjęcie partnera nr 217, 2754×2722, JPEG 3 905 146 B. Adresy źródłowe i SHA256 w README. Zgoda partnera potwierdzona wcześniej przez Irka, bez nowego niezależnego badania licencji. Nie usunięto oznaczeń z pliku. Zdjęcie pokazuje panel z kryształami, NIE pożądaną cegłę z żyłkami ani wnętrze jednego kryształu. Żadnych innych zdjęć nie podmieniono.
-
-## Blokady i błędy do kontroli
-1. Wysoki — brak obu wskazanych referencji. Tania potwierdziła, że ich nie posiada i nie może podać URL/ścieżek. Poproszono Irka o linki lub ścieżki. Nie można zatwierdzić finalnego tła.
-2. Wysoki — niepotwierdzona płynność, duże odstępy klatek w pomiarze. Pliki assets/prototype.css i assets/prototype.js. Odtworzenie: przewijać demo, porównać pomiar w review/correction/tests.json.
-3. Średni — duży oryginał 3,9 MB i przybliżenie CSS: nie gwarantuje ostrego makro przy wysokim DPR/4K. Docelową optymalizację trzeba oprzeć na właściwym pliku.
-
-## Dostarczenie
-Lokalny folder i ZIP zawierają kompletny prototyp, README, raport, oryginał i zrzuty. GitHub zawiera rzeczywisty kod, zdjęcie oraz JSON bieżących testów; zrzuty w lokalnym ZIP. Tania otrzymuje link do commitu. Niczego nie wdrażano. Status: mechanizm skorygowany do oceny, całość korekty NIE jest ostatecznie ukończona.
+Szczegóły źródeł w sources.json. Oryginały zachowane. Polityki witryn, hosting i działające strony bez zmian.
