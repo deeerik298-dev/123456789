@@ -1,20 +1,35 @@
-# Raport Kalinki — 25.10.2026
+# Raport korekty Kalinki — 25.10.2026
 
-## Ustalony stan
-Odczytano zadania #1 i #2. Repozytorium przed pracą zawierało status AURA SALT i archiwum AURA INTERIUM. Nie znaleziono folderu zapisanego prototypu ani procesu node/python w odczycie Get-Process. Nie dowodzi to przyczyny wcześniejszego przerwania; nie można potwierdzić „zawieszenia”. Wykorzystano istniejącą bibliotekę, przygotowując tylko oddzielny prototyp.
+Odczytano zatwierdzony komentarz Tanii 6399055826. Zmieniono istniejący prototyp, bez przebudowy projektu i bez zmian witryn. Kopia poprzedniej paczki: work/salt-light-before-correction.zip (poza dostarczaną paczką).
 
-## Wyniki
-Rzeczywista przeglądarka Chromium headless, lokalny file://, emulowane ekrany 390 × 900, 768 × 900, 1440 × 900. Każdy: początek/połowa/koniec przewijania zmieniały pozycję światła; Enter przełączał tryb statyczny i przywracał ruch; prefers-reduced-motion włączał statyczne światło i blokował wymuszanie ruchu. Brak poziomego przepełnienia, błędów JS i żądań HTTP(S). Dodatkowy test 390 px bez JavaScript: treść widoczna, nieaktywny przycisk ukryty. Łącznie 4 przypadki PASS. Szczegóły: review/tests.json.
+## Wykonano
+- Dłuższy scroll 450 svh, zakotwiczony viewport, stała geometria i kadrowanie tła.
+- Pionowy postęp światła góra→dół zamiast wcześniejszego ruchu po przekątnej.
+- Dwie dokładnie dopasowane warstwy tej samej autentycznej fotografii: przygaszona oraz jaśniejsza odsłaniana miękką maską. Jasność nadal wynika z fotografii; brak dodanych fikcyjnych żyłek. To efekt graficzny, nie symulacja przezierności.
+- Usunięto kosztowną dodatkową maskę luminancji po pomiarach. Nadal wymagana optymalizacja wydajności.
+- Ukryto zachętę do animacji bez JS; statyczny fallback i preferencja ograniczonego ruchu.
 
-Oceniono wzrokowo zrzuty 1440 i 390 px w połowie przewijania: tekst i kontrolki czytelne, bez nakładania, autentyczna ziarnista powierzchnia soli; światło delikatne. Zapisano także początek oraz wariant bez JS. To własna kontrola Kalinki.
+## Wyniki rzeczywistych testów
+Chromium headless, lokalny file://; ekrany emulowane, nie fizyczne urządzenia. Zrzuty 0/25/50/75/100% dla każdej szerokości. 4 funkcjonalne PASS: 390,768,1440 oraz bez JS. PASS nie oznacza spełnienia wymagań płynności ani finalnej fotografii.
+Sprawdzono: postęp z tolerancją 0,002, pozycja sticky 0 px, stała transformacja materiału, brak poziomego przepełnienia, skip-link klawiaturą, Enter dla trybu statycznego i powrotu, reduced-motion po zmianie i resize, brak błędów JS/konsoli i żądań HTTP(S). Zmiana preferencji systemowej jest obsługiwana także przy kolejnym scroll/resize, jako zabezpieczenie przed niedostarczonym zdarzeniem change.
 
-## Ograniczenia i priorytety
-- Średni: fotografia przedstawia powierzchnię panelu, a nie wnętrze jednego kryształu. Plik assets/salt-original.jpg. Odtworzenie: otworzyć oryginał i porównać z założeniem issue #1. Użyto tego materiału celowo, zachowując rzeczywistą sól; do pełnej zgodności potrzebne inne zdjęcie zatwierdzone przez Irka.
-- Średni: gradient CSS jest płaską interpretacją światła, nie modelem kolejnych warstw. Pliki assets/prototype.css i prototype.js. Odtworzenie: przewinąć od początku do końca. Nie należy używać prototypu jako dowodu efektu rzeczywistego produktu.
-- Średni: zdjęcie 3,9 MB, bez optymalizacji kopii. Oryginał zachowano; nie deklaruje się optymalnej wydajności produkcyjnej ani 4K.
-- Nie wykonano pomiaru FPS/GPU ani Lighthouse; nie potwierdzono płynności na fizycznym telefonie, Safari/iOS ani urządzeniu o małej mocy. Nie deklaruje się stałych 60 FPS. Aktualizacja jest limitowana requestAnimationFrame, bez filmu i ciągłego timera.
-- Nie przeprowadzono pełnego audytu WCAG ani pomiaru kontrastu wszystkich pikseli zdjęcia. Klawiaturą sprawdzono przycisk Enter; nie jest to pełny test czytnika ekranu.
-- Wariant bez JS zachowuje statyczne światło; zachęta scroll nie oznacza wtedy animacji.
+## Pomiar płynności — ograniczenie pozostaje
+W każdym ekranie 59 odstępów requestAnimationFrame podczas programowego przewijania. To pomocniczy pomiar środowiska headless, nie benchmark fizycznego telefonu ani gwarancja FPS.
+- 390 px: mediana 23.8 ms; maksimum 58.5 ms.
+- 768 px: mediana 75.3 ms; maksimum 154.8 ms.
+- 1440 px: mediana 132.4 ms; maksimum 241.6 ms.
+Wyniki wskazują opóźnienia, szczególnie na desktopie tego środowiska. Nie zatwierdzam płynności; potrzebna dalsza optymalizacja po doborze właściwego zdjęcia. Brak testów Safari/iOS, fizycznego Androida, sieci mobilnej, pełnego WCAG.
 
-## Decyzja
-Gotowy prototyp do kontroli, nie ostateczna zgodność z całą wizją. Tania powinna ocenić rzeczywiste pliki; Irek decyduje, czy kierunek światła i zdjęcie są odpowiednie. Bez publikacji i zmian istniejących stron.
+## Ocena wizualna
+Obejrzano zrzuty desktop 0/50/100% i mobilny 50%: bez białych marginesów, stabilny materiał i widoczne zmiany oświetlenia, czytelna treść. Zapisano wszystkie 15 punktów; nie deklaruję niezależnej kontroli Tanii ani pełnego pomiaru kontrastu. Wyostrzenia lub nowych detali nie dodawano.
+
+## Źródło i licencja
+Niezmienione zdjęcie partnera nr 217, 2754×2722, JPEG 3 905 146 B. Adresy źródłowe i SHA256 w README. Zgoda partnera potwierdzona wcześniej przez Irka, bez nowego niezależnego badania licencji. Nie usunięto oznaczeń z pliku. Zdjęcie pokazuje panel z kryształami, NIE pożądaną cegłę z żyłkami ani wnętrze jednego kryształu. Żadnych innych zdjęć nie podmieniono.
+
+## Blokady i błędy do kontroli
+1. Wysoki — brak obu wskazanych referencji. Tania potwierdziła, że ich nie posiada i nie może podać URL/ścieżek. Poproszono Irka o linki lub ścieżki. Nie można zatwierdzić finalnego tła.
+2. Wysoki — niepotwierdzona płynność, duże odstępy klatek w pomiarze. Pliki assets/prototype.css i assets/prototype.js. Odtworzenie: przewijać demo, porównać pomiar w review/correction/tests.json.
+3. Średni — duży oryginał 3,9 MB i przybliżenie CSS: nie gwarantuje ostrego makro przy wysokim DPR/4K. Docelową optymalizację trzeba oprzeć na właściwym pliku.
+
+## Dostarczenie
+Lokalny folder i ZIP zawierają kompletny prototyp, README, raport, oryginał i zrzuty. GitHub zawiera rzeczywisty kod, zdjęcie oraz JSON bieżących testów; zrzuty w lokalnym ZIP. Tania otrzymuje link do commitu. Niczego nie wdrażano. Status: mechanizm skorygowany do oceny, całość korekty NIE jest ostatecznie ukończona.

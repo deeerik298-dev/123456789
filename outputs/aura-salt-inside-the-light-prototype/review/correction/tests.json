@@ -1,0 +1,177 @@
+[
+  {
+    "width": 390,
+    "steps": [
+      {
+        "progress": 0,
+        "y": "0%",
+        "sceneTop": 0,
+        "materialTransform": "matrix(1.32, 0, 0, 1.32, 0, 0)",
+        "overflow": false,
+        "mask": "match-source"
+      },
+      {
+        "progress": 0.2502,
+        "y": "25.015873015873012%",
+        "sceneTop": 0,
+        "materialTransform": "matrix(1.32, 0, 0, 1.32, 0, 0)",
+        "overflow": false,
+        "mask": "match-source"
+      },
+      {
+        "progress": 0.5,
+        "y": "50%",
+        "sceneTop": 0,
+        "materialTransform": "matrix(1.32, 0, 0, 1.32, 0, 0)",
+        "overflow": false,
+        "mask": "match-source"
+      },
+      {
+        "progress": 0.7502,
+        "y": "75.01587301587301%",
+        "sceneTop": 0,
+        "materialTransform": "matrix(1.32, 0, 0, 1.32, 0, 0)",
+        "overflow": false,
+        "mask": "match-source"
+      },
+      {
+        "progress": 1,
+        "y": "100%",
+        "sceneTop": 0,
+        "materialTransform": "matrix(1.32, 0, 0, 1.32, 0, 0)",
+        "overflow": false,
+        "mask": "match-source"
+      }
+    ],
+    "timings": {
+      "samples": 59,
+      "median": 23.799999998882413,
+      "max": 58.5
+    },
+    "skip": true,
+    "stationary": true,
+    "resumed": true,
+    "reduced": true,
+    "errors": [],
+    "remote": [],
+    "pass": true
+  },
+  {
+    "width": 768,
+    "steps": [
+      {
+        "progress": 0,
+        "y": "0%",
+        "sceneTop": 0,
+        "materialTransform": "matrix(1.32, 0, 0, 1.32, 0, 0)",
+        "overflow": false,
+        "mask": "match-source"
+      },
+      {
+        "progress": 0.2502,
+        "y": "25.015873015873012%",
+        "sceneTop": 0,
+        "materialTransform": "matrix(1.32, 0, 0, 1.32, 0, 0)",
+        "overflow": false,
+        "mask": "match-source"
+      },
+      {
+        "progress": 0.5,
+        "y": "50%",
+        "sceneTop": 0,
+        "materialTransform": "matrix(1.32, 0, 0, 1.32, 0, 0)",
+        "overflow": false,
+        "mask": "match-source"
+      },
+      {
+        "progress": 0.7502,
+        "y": "75.01587301587301%",
+        "sceneTop": 0,
+        "materialTransform": "matrix(1.32, 0, 0, 1.32, 0, 0)",
+        "overflow": false,
+        "mask": "match-source"
+      },
+      {
+        "progress": 1,
+        "y": "100%",
+        "sceneTop": 0,
+        "materialTransform": "matrix(1.32, 0, 0, 1.32, 0, 0)",
+        "overflow": false,
+        "mask": "match-source"
+      }
+    ],
+    "timings": {
+      "samples": 59,
+      "median": 75.29999999888241,
+      "max": 154.7999999988824
+    },
+    "skip": true,
+    "stationary": true,
+    "resumed": true,
+    "reduced": true,
+    "errors": [],
+    "remote": [],
+    "pass": true
+  },
+  {
+    "width": 1440,
+    "steps": [
+      {
+        "progress": 0,
+        "y": "0%",
+        "sceneTop": 0,
+        "materialTransform": "matrix(1.32, 0, 0, 1.32, 0, 0)",
+        "overflow": false,
+        "mask": "match-source"
+      },
+      {
+        "progress": 0.2502,
+        "y": "25.015873015873012%",
+        "sceneTop": 0,
+        "materialTransform": "matrix(1.32, 0, 0, 1.32, 0, 0)",
+        "overflow": false,
+        "mask": "match-source"
+      },
+      {
+        "progress": 0.5,
+        "y": "50%",
+        "sceneTop": 0,
+        "materialTransform": "matrix(1.32, 0, 0, 1.32, 0, 0)",
+        "overflow": false,
+        "mask": "match-source"
+      },
+      {
+        "progress": 0.7502,
+        "y": "75.01587301587301%",
+        "sceneTop": 0,
+        "materialTransform": "matrix(1.32, 0, 0, 1.32, 0, 0)",
+        "overflow": false,
+        "mask": "match-source"
+      },
+      {
+        "progress": 1,
+        "y": "100%",
+        "sceneTop": 0,
+        "materialTransform": "matrix(1.32, 0, 0, 1.32, 0, 0)",
+        "overflow": false,
+        "mask": "match-source"
+      }
+    ],
+    "timings": {
+      "samples": 59,
+      "median": 132.40000000037253,
+      "max": 241.59999999962747
+    },
+    "skip": true,
+    "stationary": true,
+    "resumed": true,
+    "reduced": true,
+    "errors": [],
+    "remote": [],
+    "pass": true
+  },
+  {
+    "case": "no-js",
+    "pass": true
+  }
+]

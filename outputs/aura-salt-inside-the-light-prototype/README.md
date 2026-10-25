@@ -1,6 +1,6 @@
 # AURA SALT — Inside the light
 
-Oddzielny prototyp do zadania GitHub #1, 25.10.2026. Nie jest gotową stroną ani zgodą na publikację.
+Oddzielny prototyp do zadania GitHub #1, korekta komentarza 6399055826, 25.10.2026. Status: częściowo wykonana korekta, brak dwóch referencji i niepotwierdzona płynność. Nie jest gotową stroną ani zgodą na publikację.
 
 ## Uruchomienie
 Rozpakuj całość i otwórz index.html w przeglądarce. Nie wymaga instalacji, internetu ani serwera. Przewijaj stronę; przycisk „Statisch licht” zatrzymuje efekt w połowie. „Licht bij scrollen” przywraca przewijanie. Systemowe ograniczenie ruchu ma pierwszeństwo. Bez JavaScript pozostaje statyczny widok.
@@ -8,7 +8,7 @@ Rozpakuj całość i otwórz index.html w przeglądarce. Nie wymaga instalacji, 
 ## Pliki
 - index.html — pojedynczy ekran NL i krótki odcinek przewijania.
 - assets/prototype.css — układ, fotografia, światło i wariant mobilny.
-- assets/prototype.js — aktualizacja pozycji światła na scroll przez requestAnimationFrame; bez ciągłej pętli animacji.
+- assets/prototype.js — pionowy postęp 0–100% przez requestAnimationFrame; bez ciągłej pętli. Stałe, dopasowane warstwy tego samego zdjęcia, miękka maska pasma światła. Brak dodatkowej pełnorozdzielczej maski luminancji ze względu na koszt renderowania.
 - assets/salt-original.jpg — niezmieniona fotografia partnera, 2754 × 2722 px, 3 905 146 bajtów.
 - REPORT.md — faktyczne testy i ograniczenia.
 - review/ — zapis testów i zrzuty ekranów (lokalna paczka).
@@ -19,7 +19,12 @@ Oryginalny plik: https://solnewnetrze.pl/produkty/panel%20solny%20solne%20wnetrz
 SHA256 zdjęcia: ed223676acb9355a93a914217bfb8463e243a93e8e39d5f62d3d2d78ecb6c5bb
 Zgoda partnera potwierdzona przez Irka w ustaleniach projektu. Materiał partnera, nie realizacja AURA SALT. Oryginału nie retuszowano; przybliżenie i tonacja są wyłącznie CSS. Nie wykonano nowego badania praw osób trzecich.
 
-To powierzchnia kryształów na panelu, nie fotografia wnętrza pojedynczego kryształu. Gradient na zdjęciu jest demonstracją artystyczną, nie symulacją optyczną. Nie rekonstruuje wewnętrznych warstw materiału ani rzeczywistej transmisji LED. Ten aspekt wizji wymaga osobnego autentycznego makro/próbki materiału albo zatwierdzonej wizualizacji. Nie ma AI-generowanego tła, filmów, analityki, cookies, fontów zewnętrznych ani backendu.
+To powierzchnia kryształów na panelu, nie fotografia wnętrza pojedynczego kryształu. Maskowane odsłanianie rozjaśnionej wersji tej samej fotografii jest demonstracją artystyczną, nie symulacją optyczną. Nie rekonstruuje wewnętrznych warstw materiału ani rzeczywistej transmisji LED. Ten aspekt wizji wymaga osobnego autentycznego makro/próbki materiału albo zatwierdzonej wizualizacji. Nie ma AI-generowanego tła, filmów, analityki, cookies, fontów zewnętrznych ani backendu.
 
 ## Kontrola
 Testy Kalinki opisuje REPORT.md. Tania ocenia niezależnie otrzymane pliki; wyniki Kalinki nie są jej testami. Wymagana ocena artystyczna Irka. Nie wdrażać bez jego decyzji. Istniejące strony v0.1 i AURA INTERIUM pozostały nietknięte.
+
+## Korekta i zrzuty
+Dłuższy scroll 450 svh, nieruchomy materiał, światło od góry do dołu. Pełne lokalne porównanie: review/correction/index.html — 15 zrzutów 0/25/50/75/100% przy 390/768/1440 px. review/tests.json i wcześniejsze zrzuty dotyczą poprzedniej iteracji; aktualne wyniki to review/correction/tests.json. Screenshoty są w lokalnym ZIP; repozytorium zawiera kod i aktualny JSON testów.
+
+Nie otrzymano referencji ściany z żyłkami i pojedynczej różowej cegły wskazanych przez Tanię. Tania potwierdziła brak dostępu do nich. Obecne zdjęcie jest wyłącznie materiałem zastępczym do testów mechanizmu, nie zatwierdzonym makro finalnej cegły.
